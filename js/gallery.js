@@ -88,13 +88,13 @@ gallery.innerHTML = galleryMarkup;
 gallery.addEventListener('click', onGalleryClick);
 
 function onGalleryClick(event) {
-  event.preventDefault();
-
   const image = event.target;
 
   if (!image.classList.contains('gallery-image')) {
     return;
   }
+
+  event.preventDefault();
 
   const largeImageUrl = image.dataset.source;
   const imageAlt = image.alt;
@@ -105,6 +105,3 @@ function onGalleryClick(event) {
 
   instance.show();
 }
-
-import * as basicLightbox from 'basiclightbox';
-import 'basiclightbox/dist/basicLightbox.min.css';
